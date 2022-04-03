@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>R4</title>
+</head>
+
+<body>
+  <script>
+    function addFields(){
+      // body...
+      var input = '';
+      var number = document.getElementById('number').value;
+      for(var i=0;i<number;i++)
+      {
+        input +="<label for='dir"+i+"'>Dirección de subred "+(i+1)+
+        "</label><input id='dir"+i+"' name='dir"+i+"'><br>";
+      }
+      document.getElementById('container').innerHTML = input; 
+    }
+
+    function addFields2(){
+      // body...
+      var input = '';
+      var number = document.getElementById('number2').value;
+      for(var i=0;i<number;i++)
+      {
+        input +="<label for='dir2"+i+"'>Dirección de subred"+(i+1)+"</label>"+
+        "<input id='dir2"+i+"' name='dir2"+i+"'><label for='mask"+i+"'>Máscara de subred "+(i+1)+"</label>"+
+        "<input id='mask"+i+"' name='mask"+i+"'><label for='area"+i+"'>Número de área "+(i+1)+
+        "</label><input id='area"+i+"' name='area"+i+"'><br>";
+      }
+      document.getElementById('container2').innerHTML = input; 
+    }
+  </script>
+
+
+  <h1 style="color: blue">Ingresa la información de la configuración</h1>
+  <h2>RIP</h2>
+   <form action="" method="post">
+        <label for="number">Número de subredes: </label>
+        <input type="text" id="number" name="number" />
+        <a href="#" id="names" onclick="addFields();">Ok</a>
+        <div id='container'/></div><br/>
+        <input type="submit" value="Configurar RIP" name="routing-config">
+  </form>
+
+  <h2>OSPF</h2>
+   <form action="" method="post">
+        <label for="number2">Número de subredes: </label>
+        <input type="text" id="number2" name="number2"/>
+        <a href="#" id="names2" onclick="addFields2();">Ok</a>
+        <div id='container2'/></div><br/>
+        <input type="submit" value="Configurar OSPF" name="routing-config">
+  </form>
+
+</body>
+
+</html>
