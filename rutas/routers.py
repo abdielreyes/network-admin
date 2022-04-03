@@ -66,10 +66,26 @@ def routing_edit():
 	if request.method == 'GET':
 		comandos = ["exit", "show ip protocol"]
 		resultado = connect_ssh("10.0.1.254","cisco","cisco",comandos)
-		if resultado != "":
-			noti = "Se han encontrado rutas configuradas"
-		elif resultado == "":
-			noti = "No se han encontrado rutas"	
-		return render_template("editRouting.html", value = noti)
+		if "Routing Protocol" in resultado:
+			noti = "Se han encontrado protocolos de enrutamiento"
+			protocol_info = resultado.split("\n")
+			routing_protocols_data = [x for x in protocol_info if x.startswith("Routing Protocol")]
+			protocols_in_router = []
+			for prot in routing_protocols_data:
+				temp_p = prot.split(" ")[3]
+				temp_p = temp_p.replace("\r", "")
+				temp_p = temp_p.replace("\"", "")
+				protocols_in_router.append(temp_p)
+			protocolos = f"Protocolos encontrados: {', '.join(protocols_in_router)}"
+			print(f"Protocolos encontrados: {', '.join(protocols_in_router)}")
+		else:
+			noti = "NO se han encontrado protocolos de enrutamiento"
+		return render_template("editRouting.html", value = noti, protocolos = protocolos)
+	elif request.method == 'POST':
+		print("-----------------")
+		num0 = request.form['number0'] #numero de las interfaces rip
+		num1 = request.form['number1'] #numero de las interfaces ospf
+		print("INterfaces rip: "+num0+"  INterfaces ospf = "+num1)
+	return "Modificacion exitosa"	
 
 	
