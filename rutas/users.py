@@ -1,12 +1,10 @@
 from flask import Flask, request, render_template, redirect, url_for
 from netmiko import ConnectHandler
-import routers
+from rutas.routers import connect_ssh
 
 def user_config():
 	if request.method == 'GET':
 		return render_template("confU.html")
-	if request.method == 'POST':
-		return "Peticion post"
 
 def user_add():
 	if request.method == 'GET':

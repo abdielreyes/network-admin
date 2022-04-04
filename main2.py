@@ -9,7 +9,7 @@ app.add_url_rule('/routers/config', "router_config", router_config, methods=["GE
 app.add_url_rule('/routers/confRouting', "routing_config", routing_config, methods=["GET"])
 app.add_url_rule('/routers/confRoutingAdd', "routing_add", routing_add, methods=["GET", "POST"])
 app.add_url_rule('/routers/confRoutingEdit', "routing_edit", routing_edit, methods=["GET", "POST"])
-app.add_url_rule('/users/confUser', "user_config", user_config, methods=["GET", "POST"])
+app.add_url_rule('/users/confUser', "user_config", user_config, methods=["GET"])
 app.add_url_rule('/users/confUserAdd', "user_add", user_add, methods=["GET", "POST"])
 
 
