@@ -19,4 +19,13 @@ def user_add():
 
 #def user_edit():
 
-#def user_remove():
+def user_remove():
+	if request.method == 'GET':
+		return render_template("removeUser.html")
+	if request.method =='POST':
+		usr = request.form['nameUser']
+		con = request.form['passUser']
+		comandos = ["no username "+usr+" privilege 15 password "+con]
+		resultado = connect_ssh("10.0.1.254","cisco","cisco",comandos)
+		print(resultado)
+	return "Usuario registrado exitosamente"
