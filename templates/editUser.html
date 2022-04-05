@@ -4,22 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="CSS/style.css">
     <title>Editar usuarios</title>
   </head>
 
   <body>
-    <h1 style="color: blue">Editar usuario</h1>
+    <h1>Editar usuario</h1>
      <form action="" method="post">
-          <label>Nombre de usuario: </label> <input type="text" id="nameUser" name="nameUser" />
-          <br/><br/>
-          <label>Contraseña: </label> <input type="text" id="passUser" name="passUser" />
-          <br/><br/><br/><br/>
-          <label>Nuevo nombre de usuario: </label> <input type="text" id="newNameUser" name="newNameUser" />
-          <br/><br/>
-          <label>Nueva contraseña: </label> <input type="text" />
-          <br/><br/>
-          <label>Confirmar nueva contraseña: </label> <input type="text" id="newPassUser" name="newPassUser" />
-          <br/><br/>
+          <input type="text" id="nameUser" name="nameUser" placeholder="Nombre de usuario"/>
+          <input type="text" id="passUser" name="passUser" placeholder="Contraseña"/>
+          <input type="text" id="newNameUser" name="newNameUser" placeholder="Nuevo nombre de usuario"/>
+          <input type="text" placeholder="Nueva contraseña"/>
+          <input type="text" id="newPassUser" name="newPassUser" placeholder="Confirmar nueva contraseña"/>
           <input type="submit" value="Editar usuario" name="user-config">
     </form>
   </body>
