@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@500;600;800&family=Work+Sans&display=swap');
+
+* {
+    color: #191919;
+    font-size: 15px;
+    font-family: 'Lato';
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+    background-color: #E6E8E6;
+}
+
+h1, h2 {
+    font-size: 25px;
+    font-weight: 600;
+    padding: 0 0 6vh 0;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: 600;
+    padding: 0 0 4vh 0;
+}
+
+b {
+    font-weight: 600;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+input, a {
+    border: solid 2px #F15025;
+    border-radius: 100px;
+    padding: 1.8vh 1.5vw;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+input[type=text], input[type=password] {
+    width: 30%;
+    margin: 2vh 0 4vh 0;
+}
+
+input[type=submit] {
+    background-color: #F15025;
+    color: #E6E8E6;
+    width: 15%;
+}
+
+input[type=submit]:hover {
+    background-color: #9e3518;
+    border: solid 2px #9e3518;
+}
+
+a {
+    margin: 2vh;
+    text-decoration: none;
+    width: 30%;
+}
+
+a:hover {
+    background-color: #F15025;
+    color: #E6E8E6;
+}
